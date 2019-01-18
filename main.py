@@ -126,7 +126,6 @@ def cheek(x, y):
     circle(30)
     end_fill()
 
-
 def mouth(x, y):
     color(239, 69, 19)
     penup()

@@ -1,9 +1,8 @@
 # peppa-pig
 
-Draw a peppa pig using pythong
+Draw a peppa pig using python & turtle
 
-
-
+![](sample.png)
 
 
 # Get Started

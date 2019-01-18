@@ -110,6 +110,7 @@ def ears(x, y):
 
 
 def eyes(x, y):
+    begin_poly()
     color((255, 155, 192), "white")
     pu()
     seth(90)
@@ -130,6 +131,9 @@ def eyes(x, y):
     begin_fill()
     circle(3)
     end_fill()
+    end_poly()
+    register_shape('lefteye', get_poly())
+    begin_poly()
     color((255, 155, 192), "white")
     pu()
     seth(90)
@@ -150,7 +154,8 @@ def eyes(x, y):
     begin_fill()
     circle(3)
     end_fill()
-
+    end_poly()
+    register_shape('righteye', get_poly())
 
 def cheek(x, y):
     color((255, 155, 192))
@@ -325,6 +330,12 @@ def whoami():
     write("齐", font=("黑体", 24, "bold"))
     time.sleep(1)
 
+def blink():
+    for i in range(10000):
+        shape('lefteye')
+        tilt(30)
+        shape('righteye')
+        tilt(30)
 
 def main():
     setting()
@@ -340,6 +351,7 @@ def main():
     foot()
     tail()
     whoami()
+    blink()
     done()
 
 

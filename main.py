@@ -132,7 +132,8 @@ def eyes(x, y):
     circle(3)
     end_fill()
     end_poly()
-    register_shape('lefteye', get_poly())
+    lefteye = get_poly()
+    addshape('lefteye', lefteye)
     begin_poly()
     color((255, 155, 192), "white")
     pu()
@@ -155,7 +156,7 @@ def eyes(x, y):
     circle(3)
     end_fill()
     end_poly()
-    register_shape('righteye', get_poly())
+    addshape('righteye', get_poly())
 
 def cheek(x, y):
     color((255, 155, 192))
@@ -270,6 +271,7 @@ def foot():
 
 
 def tail():
+    begin_poly()
     pensize(4)
     color((255, 155, 192))
     pu()
@@ -282,6 +284,11 @@ def tail():
     circle(70, 20)
     circle(10, 330)
     circle(70, 30)
+    end_poly()
+    t = get_poly()
+    s = Shape("compound")
+    s.addcomponent(t,'white','white')
+    addshape('tail', s)
 
 
 def whoareyou():
@@ -330,12 +337,6 @@ def whoami():
     write("齐", font=("黑体", 24, "bold"))
     time.sleep(1)
 
-def blink():
-    for i in range(10000):
-        shape('lefteye')
-        tilt(30)
-        shape('righteye')
-        tilt(30)
 
 def main():
     setting()
@@ -351,7 +352,6 @@ def main():
     foot()
     tail()
     whoami()
-    blink()
     done()
 
 

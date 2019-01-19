@@ -1,6 +1,6 @@
 # peppa-pig
 
-Draw a peppa pig using python & turtle
+Draw a Peppa Pig using Python & Turtle
 
 ![](sample.png)
 
